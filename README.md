@@ -1,8 +1,8 @@
 # stm32-eventbus
-A simple event bus for STM32 MCUs
+A simple linked-list event bus for STM32 MCUs
 
-## Usage
-1) Add event names to EventType_t enum in eventbus.h
-2) Run CORE_EventDispatcher() in main while loop
-3) Add events to bus using CORE_AddEvent
-4) Add listeners to events with CORE_AddListener
+# Setup
+To use, add eventbus.c and eventbus.h to application.  Create event type names in EventType_t enum in eventbus.h.
+
+# Usage
+Add the CORE_EventDispatcher() in main while loop.  This function checks for pending events and calls corresponding listeners.  To fire events on the bus, use CORE_AddEvent.  To add listeners to a specific event use CORE_AddListener.  Several functions for removing events or listeners also are provided.
